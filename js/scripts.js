@@ -1,20 +1,40 @@
-var i;
-var result=[];
-var input= parseInt(prompt("Enter a number: "));
-for(i=1;i<=input;i++)
+var Numbers;
+var str='';
+
+$(document).ready(function()
 {
-  if(i%3===0)
-  {
-    continue;
-  }
-  else if (i%5===0)
-  {
-    continue;
-  }
-  else if (i%15===0)
-  {
-    continue;
+  //Business Logic
+  function condition(){
+    for(var i=1;i<=Numbers;i++){
+      if((i % 3==0) && (i % 5==0)){
+        str+='pingpong';
+      }
+      else if(i % 5==0){
+      str+='pong';
+      }
+      else if(i % 3==0){
+       str+='ping';
+      }
+      else{
+       str+=i.toString();
+      }
+      if(i!=Numbers){
+         str+=',';
+      }
+    }
+    $('.answer').text(str);
+    $('#result').show();
+    str='';
   }
 
-   result+=i+",";
-}
+  //user interface
+  $("form#pingpong").submit(function(event)
+{
+  Numbers=parseInt($('#input').val());
+  condition();
+  $('#input').val('');
+  event.preventDefault();
+});
+
+
+});
