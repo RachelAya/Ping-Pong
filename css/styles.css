@@ -1,12 +1,18 @@
+.jumbotron{
+  background-color:#EC7063 ;
+  font-family: 'Amita'; font-size: 22px;
+}
+
 #result
 {
   display: none;
 }
 #row1
 {
-  background-color: #BFC9CA;
+  background-color:#EC7063 ;
+  font-family: 'Amita'; font-size: 22px;
 }
 #col1
 {
-  background-color: #117A65  ;
+  background-color: #99A3A4 ;
 }
